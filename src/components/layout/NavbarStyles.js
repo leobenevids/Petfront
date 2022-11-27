@@ -1,10 +1,10 @@
 import styled from "styled-components";
 
 export const MyNavbar = styled.nav`
+  width: 100%;
   display: flex;
   justify-content: space-between;
   padding: 1em 1.5em;
-  background-color: var(--black);
   color: var(--fire-opal);
 
   div {
@@ -13,7 +13,7 @@ export const MyNavbar = styled.nav`
   }
 
   img {
-    width: 40px;
+    width: 150px;
     margin-right: 0.8em;
   }
 
@@ -26,7 +26,7 @@ export const MyNavbar = styled.nav`
   li,
   a {
     text-decoration: none;
-    color: var(--orange-yellow);
+    color: var(--black);
     font-weight: bold;
     cursor: pointer;
     transition: 0.5s;
@@ -35,11 +35,11 @@ export const MyNavbar = styled.nav`
   }
 
   li:hover {
-    background-color: var(--success-green);
-    color: var(--black);
+    background-color: var(--fire-opal);
+    transform: scale(1.1);
   }
 
   li:hover > a {
-    color: var(--white);
+    color: var(--mimi-pink);
   }
 `;

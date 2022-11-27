@@ -58,7 +58,7 @@ function App() {
             </Route>
           </Switch>
         </Container>
-        {/* <Footer /> */}
+        <Footer />
       </UserProvider>
     </Router>
   )

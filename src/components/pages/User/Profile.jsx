@@ -71,12 +71,14 @@ function Profile() {
       });
 
     setFlashMessage(data.message, msgType);
+
+    
   };
 
   return (
-    <section>
+    <div style={{display: 'flex'}}>
       <Header>
-        <h1>Perfil</h1>
+        <h1>Olá, {user.name}</h1>
         {(user.image || preview) && (
           <RoundedImage
             src={
@@ -88,6 +90,7 @@ function Profile() {
           />
         )}
       </Header>
+      
       <FormContainer onSubmit={handleSubmit}>
         <Input
           text="Imagem"
@@ -135,7 +138,7 @@ function Profile() {
         />
         <input type="submit" value="Editar" />
       </FormContainer>
-    </section>
+    </div>
   );
 }
 

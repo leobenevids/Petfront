@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import bus from "../../utils/bus";
 
-import styles from "./Message.module.css";
+import { MessageContainer } from "./MessageStyles";
 
 function Message() {
   let [visibility, setVisibility] = useState(false);
@@ -28,9 +28,7 @@ function Message() {
   });
 
   return (
-    visibility && (
-      <div className={`${styles.message} ${styles[type]}`}>{message}</div>
-    )
+    visibility && <MessageContainer variant={type}>{message}</MessageContainer>
   );
 }
 

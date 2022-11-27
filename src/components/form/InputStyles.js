@@ -13,11 +13,13 @@ export const FormContainer = styled.div`
 
   input {
     padding: 0.7em;
-    border: 1px solid #777;
+    border: 2px solid var(--fire-opal);
     border-radius: 5px;
-  }
+    background-color: var(--orange-yellow);
 
-  input::placeholder {
-    color: #7b7b7b;
+
+    ::placeholder {
+      color: var(--black);
+    }
   }
 `;

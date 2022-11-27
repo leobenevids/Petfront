@@ -26,7 +26,6 @@ function MyPets() {
         headers: {
           Authorization: `Bearer ${JSON.parse(token)}`,
         },
-        
       })
       .then((response) => {
         setPets(response.data.pets);
@@ -43,7 +42,7 @@ function MyPets() {
         },
       })
       .then((response) => {
-        const updatedPets = pets.filter((pet) => pet._id != id);
+        const updatedPets = pets.filter((pet) => pet._id !== id);
         setPets(updatedPets);
         return response.data;
       })
@@ -59,12 +58,13 @@ function MyPets() {
   async function concludeAdoption(id) {
     let msgType = "success";
 
-    const data = await api
-      .patch(`/pets/conclude/${id}`, {
-        headers: {
-          Authorization: `Bearer ${JSON.parse(token)}`,
-        },
-      })
+    const data = await api({
+      method: "patch",
+      url: `/pets/conclude/${id}`,
+      headers: {
+        Authorization: `Bearer ${JSON.parse(token)}`,
+      },
+    })
       .then((response) => {
         return response.data;
       })
@@ -117,7 +117,7 @@ function MyPets() {
                     </button>
                   </>
                 ) : (
-                  <p>Pet já adotado</p>
+                  <p>{pet.name} já encontrou uma nova família!</p>
                 )}
               </Actions>
             </PetListRow>

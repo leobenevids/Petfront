@@ -4,11 +4,16 @@ export const FormContainer = styled.form`
   max-width: 300px;
   margin: 0 auto;
   border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+
+  h1,
+  p {
+    margin: 2rem auto;
+  }
 
   input[type="submit"] {
     border-radius: 8px;
-    background-color: var(--success-green);
-    color: #fff;
     border: none;
     min-width: 100px;
     min-height: 2.5rem;
@@ -16,10 +21,16 @@ export const FormContainer = styled.form`
     cursor: pointer;
     font-size: 1.1em;
     font-weight: bold;
+    background-color: var(--black);
+    color: var(--white);
   }
 
   input[type="submit"]:hover {
-    background-color: #1c8a42;
+    font-weight: bold;
+    box-shadow: var(--shadow-2);
+    background-color: var(--orange-yellow);
+    border: 2px solid var(--fire-opal);
+    color: var(--black);
   }
 
   p {
@@ -27,8 +38,13 @@ export const FormContainer = styled.form`
   }
 
   p a {
-    color: #16479d;
+    color: var(--black);
+
     font-weight: bold;
+
+    :hover {
+      color: var(--fire-opal);
+    }
   }
 `;
 

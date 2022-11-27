@@ -12,19 +12,19 @@ export const PetListHeader = styled.div`
 
   a {
     text-decoration: none;
-    background-color: #16479d;
+    background-color: var(--black);
     color: #fff;
     font-weight: bold;
     cursor: pointer;
     transition: 0.5s;
     padding: 0.5em 0.8em;
     border-radius: 5px;
-    border: 2px solid #16479d;
+    border: 2px solid var(--black);
   }
 
   a:hover {
     background-color: transparent;
-    color: #16479d;
+    color: var(--black);
   }
 `;
 
@@ -34,7 +34,7 @@ export const PetListContainer = styled.div`
 `;
 
 export const PetListRow = styled.div`
-  border-bottom: 1px solid #16479d;
+  border-bottom: 1px solid var(--black);
   padding: 1em;
   margin: 1em;
   display: flex;
@@ -43,6 +43,7 @@ export const PetListRow = styled.div`
 
   img {
     margin-right: 1em;
+    box-shadow: var(--shadow-1);
   }
 
   span {
@@ -73,12 +74,12 @@ export const Actions = styled.div`
   }
 
   .conclude_btn {
-    color: #25b456;
-    border-color: #25b456;
+    color: var(--success-green);
+    border-color: var(--success-green);
 
     :hover {
       color: #fff;
-      background-color: #25b456;
+      background-color: var(--success-green);
     }
   }
 `;

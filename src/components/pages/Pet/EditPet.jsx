@@ -68,7 +68,7 @@ function EditPet() {
   return (
     <section>
       <AddPetHeader>
-        <h1>Editando o Pet: {pet.name}</h1>
+        <h1>Editando as informações do {pet.name}!</h1>
         <p>Depois da edição os dados serão atualizados no sistema</p>
       </AddPetHeader>
       {pet.name && (

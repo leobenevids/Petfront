@@ -55,7 +55,7 @@ function MyAdoptions() {
                 {pet.available ? (
                   <p>Adoção em processo</p>
                 ) : (
-                  <p>Parabéns por concluir a adoção</p>
+                  <p>Parabéns! {pet.name} está feliz em sua nova família</p>
                 )}
               </Actions>
             </PetListRow>

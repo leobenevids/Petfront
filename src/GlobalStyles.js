@@ -1,5 +1,7 @@
 import { createGlobalStyle, css } from "styled-components";
 
+import background from "../src/assets/img/pattern.svg";
+
 export const GlobalStyles = createGlobalStyle`${css`
   * {
     padding: 0;
@@ -25,6 +27,12 @@ export const GlobalStyles = createGlobalStyle`${css`
 
   body {
     background-color: var(--orange-yellow);
+    background-image: url(${background});
+    background-size: contain;
+
+    ::-webkit-scrollbar {
+      display: none;
+    }
   }
 
   h1 {
@@ -34,5 +42,12 @@ export const GlobalStyles = createGlobalStyle`${css`
 
   .bold {
     font-weight: bold;
+  }
+
+  input[type="submit"],
+  a,
+  button :hover {
+    cursor: pointer;
+    transition: 0.5s ease-in-out;
   }
 `}`;

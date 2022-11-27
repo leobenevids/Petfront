@@ -23,12 +23,13 @@ function PetDetails() {
   async function schedule() {
     let msgType = "success";
 
-    const data = await api
-      .patch(`pets/schedule/${pet._id}`, {
-        headers: {
-          Authorization: `Bearer ${JSON.parse(token)}`,
-        },
-      })
+    const data = await api({
+      method: "patch",
+      url: `pets/schedule/${pet._id}`,
+      headers: {
+        Authorization: `Bearer ${JSON.parse(token)}`,
+      },
+    })
       .then((response) => {
         console.log(response.data);
         return response.data;
@@ -47,8 +48,8 @@ function PetDetails() {
       {pet.name && (
         <PetDetailsContainer>
           <div>
-            <h1>Conhecendo o Pet: {pet.name}</h1>
-            <p>Se tiver interesse, marque uma visita para conhecê-lo!</p>
+            <h1>Olá, meu nome é {pet.name}!</h1>
+            <p>Se tiver interesse, marque uma visita para me conhecer, eu adoraria!</p>
           </div>
           <PetImages>
             {pet.images.map((image, index) => (

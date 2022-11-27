@@ -34,8 +34,11 @@ export const PetImages = styled.div`
   justify-content: center;
   margin-bottom: 1em;
 
+
   img {
     max-height: 200px;
     margin-right: 1em;
+    border-radius: 5px;
+    box-shadow: var(--shadow-3);
   }
 `;

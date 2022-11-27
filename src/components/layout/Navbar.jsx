@@ -3,7 +3,7 @@ import React, { useContext } from "react";
 
 import { MyNavbar } from "./NavbarStyles";
 
-import Logo from "../../assets/img/logo.png";
+import Logo from "../../assets/img/logo.svg";
 
 /* contexts */
 import { Context } from "../../context/UserContext";
@@ -17,7 +17,6 @@ function Navbar() {
     <MyNavbar>
       <div>
         <img src={Logo} alt="Petfy" />
-        <h2>Petfy</h2>
       </div>
       <ul>
         <li>
@@ -42,7 +41,7 @@ function Navbar() {
               <Link to="/login">Entrar</Link>
             </li>
             <li>
-              <Link to="/register">Registar</Link>
+              <Link to="/register">Registrar</Link>
             </li>
           </>
         )}
