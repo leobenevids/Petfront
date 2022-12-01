@@ -13,9 +13,9 @@ export const PetDetailsContainer = styled.section`
 
   button {
     border-radius: 8px;
-    background-color: #25b456;
-    color: #fff;
-    border: none;
+    color: var(--black);
+    border: 2px solid var(--black);
+    background-color: transparent;
     max-width: 200px;
     min-height: 2.5rem;
     width: 100%;
@@ -25,7 +25,8 @@ export const PetDetailsContainer = styled.section`
   }
 
   button:hover {
-    background-color: #1c8a42;
+    background-color: var(--black);
+    color: var(--white);
   }
 `;
 
@@ -34,9 +35,8 @@ export const PetImages = styled.div`
   justify-content: center;
   margin-bottom: 1em;
 
-
   img {
-    max-height: 200px;
+    max-height: 300px;
     margin-right: 1em;
     border-radius: 5px;
     box-shadow: var(--shadow-3);

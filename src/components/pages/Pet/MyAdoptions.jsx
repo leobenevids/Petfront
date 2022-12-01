@@ -12,6 +12,8 @@ import {
   PetListRow,
 } from "./DashboardStyles";
 
+import {phoneMask} from '../../../utils/phoneMask'
+
 function MyAdoptions() {
   const [pets, setPets] = useState([]);
   const [token] = useState(localStorage.getItem("token") || "");
@@ -31,7 +33,7 @@ function MyAdoptions() {
   return (
     <section>
       <PetListHeader>
-        <h1>Minhas adoções</h1>
+        <h1>Pets Adotados</h1>
       </PetListHeader>
       <PetListContainer>
         {pets.length > 0 &&
@@ -44,18 +46,27 @@ function MyAdoptions() {
               />
               <span className="bold">{pet.name}</span>
               <Contacts>
-                <p>
-                  <span className="bold">Ligue para:</span> {pet.user.phone}
-                </p>
-                <p>
-                  <span className="bold">Fale com:</span> {pet.user.name}
-                </p>
+                {pet.available ? (
+                  <>
+                    <p>
+                      <span className="bold">Ligue para:</span> {phoneMask(pet.user.phone)}
+                    </p>
+                    <p>
+                      <span className="bold">Fale com:</span> {pet.user.name}
+                    </p>
+                  </>
+                ) : (
+                  <div></div>
+                )}
               </Contacts>
               <Actions>
                 {pet.available ? (
                   <p>Adoção em processo</p>
                 ) : (
-                  <p>Parabéns! {pet.name} está feliz em sua nova família</p>
+                  <p>
+                    <b>{pet.name}</b> está feliz em fazer parte da sua família,{" "}
+                    <b>{pet.adopter.name}</b>!
+                  </p>
                 )}
               </Actions>
             </PetListRow>

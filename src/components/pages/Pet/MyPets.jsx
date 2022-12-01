@@ -12,6 +12,8 @@ import {
 
 import RoundedImage from "../../layout/RoundedImage";
 
+import ConfirmModal from "../../layout/ConfirmModal";
+
 /* hooks */
 import useFlashMessage from "../../../hooks/useFlashMessage";
 
@@ -19,6 +21,7 @@ function MyPets() {
   const [pets, setPets] = useState([]);
   const [token] = useState(localStorage.getItem("token") || "");
   const { setFlashMessage } = useFlashMessage();
+  const [openModal, setOpenModal] = useState(false);
 
   useEffect(() => {
     api
@@ -80,7 +83,7 @@ function MyPets() {
   return (
     <section>
       <PetListHeader>
-        <h1>Meus Pets Cadastrados</h1>
+        <h1>Pets Cadastrados</h1>
         <Link to="/pet/add">Cadastrar Pet</Link>
       </PetListHeader>
       <PetListContainer>
@@ -109,15 +112,26 @@ function MyPets() {
 
                     <Link to={`/pet/edit/${pet._id}`}>Editar</Link>
                     <button
+                      className="delete_btn"
                       onClick={() => {
-                        removePet(pet._id);
+                        setOpenModal(true);
                       }}
                     >
                       Excluir
                     </button>
                   </>
                 ) : (
-                  <p>{pet.name} já encontrou uma nova família!</p>
+                  <p>
+                    <b>{pet.name}</b> já encontrou uma nova família com{" "}
+                    <b>{pet.adopter.name}</b>!
+                  </p>
+                )}
+                {openModal && (
+                  <ConfirmModal
+                    isOpen={setOpenModal}
+                    handleDelete={() => removePet(pet._id)}
+                    message={`Deseja excluir o perfil de ${pet.name}?`}
+                  />
                 )}
               </Actions>
             </PetListRow>

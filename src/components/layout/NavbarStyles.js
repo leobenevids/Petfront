@@ -35,11 +35,15 @@ export const MyNavbar = styled.nav`
   }
 
   li:hover {
-    background-color: var(--fire-opal);
+    background-color: var(--black);
     transform: scale(1.1);
   }
 
   li:hover > a {
-    color: var(--mimi-pink);
+    color: var(--white);
+  }
+
+  .logout:hover {
+    background-color: var(--fire-opal);
   }
 `;

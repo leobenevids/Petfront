@@ -48,7 +48,7 @@ function Home() {
                 {pet.available ? (
                   <Link to={`/pet/${pet._id}`}>Mais detalhes</Link>
                 ) : (
-                  <p className="adopted_text">Adotado!</p>
+                  <p className="adopted_text">Adotado por {pet.adopter.name}!</p>
                 )}
               </div>
             </PetCard>

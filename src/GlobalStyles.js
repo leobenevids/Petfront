@@ -18,9 +18,7 @@ export const GlobalStyles = createGlobalStyle`${css`
     --white: #fff;
 
     /* box-shadows */
-    --shadow-1: rgba(0, 0, 0, 0.4) 0px 2px 4px,
-      rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
-      rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    --shadow-1: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     --shadow-2: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
     --shadow-3: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
   }
@@ -50,4 +48,5 @@ export const GlobalStyles = createGlobalStyle`${css`
     cursor: pointer;
     transition: 0.5s ease-in-out;
   }
+
 `}`;

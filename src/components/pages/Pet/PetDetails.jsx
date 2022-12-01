@@ -49,31 +49,40 @@ function PetDetails() {
         <PetDetailsContainer>
           <div>
             <h1>Olá, meu nome é {pet.name}!</h1>
-            <p>Se tiver interesse, marque uma visita para me conhecer, eu adoraria!</p>
-          </div>
-          <PetImages>
-            {pet.images.map((image, index) => (
-              <img
-                key={index}
-                src={`${process.env.REACT_APP_API}/images/pets/${image}`}
-                alt={pet.name}
-              />
-            ))}
-          </PetImages>
-          <p>
-            <span className="bold">Peso:</span> {pet.weight}kg
-          </p>
-          <p>
-            <span className="bold">Idade:</span> {pet.age} anos
-          </p>
-          {token ? (
-            <button onClick={schedule}>Solicitar uma Visita</button>
-          ) : (
             <p>
-              Você precisa <Link to="/register">criar uma conta</Link> para
-              solicitar a visita.
+              Se tiver interesse, marque uma visita para me conhecer, eu
+              adoraria!
             </p>
-          )}
+            <PetImages>
+              {pet.images.map((image, index) => (
+                <img
+                  key={index}
+                  src={`${process.env.REACT_APP_API}/images/pets/${image}`}
+                  alt={pet.name}
+                />
+              ))}
+            </PetImages>
+            <section>
+              <p></p>
+              <p>
+                Tenho
+                <span className="bold"> {pet.age}</span> anos de idade e peso{" "}
+                <span className="bold">{pet.weight}</span> kg
+              </p>
+              <p>
+                <cite>"{pet.description}"</cite>
+                <br />- diz <b>{pet.user.name}</b> , tutor(a) do {pet.name}
+              </p>
+            </section>
+            {token ? (
+              <button onClick={schedule}>Agendar uma visita</button>
+            ) : (
+              <p>
+                Você precisa <Link to="/register">criar uma conta</Link> para
+                agendar a visita.
+              </p>
+            )}
+          </div>
         </PetDetailsContainer>
       )}
     </>

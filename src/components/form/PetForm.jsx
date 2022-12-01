@@ -11,7 +11,7 @@ import Select from "./Select";
 function PetForm({ handleSubmit, petData, btnText }) {
   const [pet, setPet] = useState(petData || {});
   const [preview, setPreview] = useState([]);
-  const colors = ["Branco", "Preto", "Cinza", "Caramelo", "Marrom"];
+  const species = ["Cão", "Gato"];
 
   function onFileChange(e) {
     console.log(Array.from(e.target.files));
@@ -23,10 +23,10 @@ function PetForm({ handleSubmit, petData, btnText }) {
     setPet({ ...pet, [e.target.name]: e.target.value });
   }
 
-  function handleColor(e) {
+  function handleSpecies(e) {
     setPet({
       ...pet,
-      color: e.target.options[e.target.selectedIndex].text,
+      species: e.target.options[e.target.selectedIndex].text,
     });
   }
 
@@ -37,7 +37,6 @@ function PetForm({ handleSubmit, petData, btnText }) {
 
   return (
     <FormContainer onSubmit={submit}>
-
       <PreviewPetImages>
         {preview.length > 0
           ? preview.map((image, index) => (
@@ -56,7 +55,7 @@ function PetForm({ handleSubmit, petData, btnText }) {
               />
             ))}
       </PreviewPetImages>
-      
+
       <Input
         text="Imagens do Pet"
         type="file"
@@ -75,6 +74,15 @@ function PetForm({ handleSubmit, petData, btnText }) {
       />
 
       <Input
+        text="Descrição"
+        type="text"
+        name="description"
+        placeholder="Uma breve descrição"
+        handleOnChange={handleChange}
+        value={pet.description || ""}
+      />
+
+      <Input
         text="Idade do Pet"
         type="number"
         name="age"
@@ -82,7 +90,7 @@ function PetForm({ handleSubmit, petData, btnText }) {
         handleOnChange={handleChange}
         value={pet.age || ""}
       />
-      
+
       <Input
         text="Peso do Pet"
         type="number"
@@ -93,15 +101,14 @@ function PetForm({ handleSubmit, petData, btnText }) {
       />
 
       <Select
-        name="color"
-        text="Selecione a categoria"
-        options={colors}
-        handleOnChange={handleColor}
-        value={pet.color || ""}
+        name="species"
+        text="Selecione a espécie"
+        options={species}
+        handleOnChange={handleSpecies}
+        value={pet.species || ""}
       />
 
       <input type="submit" value={btnText} />
-      
     </FormContainer>
   );
 }

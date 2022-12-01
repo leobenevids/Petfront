@@ -1,7 +1,7 @@
 import api from "../../../utils/api";
 
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 
 import PetForm from "../../form/PetForm";
 
@@ -15,6 +15,7 @@ function EditPet() {
   const [token] = useState(localStorage.getItem("token") || "");
   const { id } = useParams();
   const { setFlashMessage } = useFlashMessage();
+  const navigate = useNavigate();
 
   useEffect(() => {
     api
@@ -63,6 +64,7 @@ function EditPet() {
       });
 
     setFlashMessage(data.message, msgType);
+    navigate(`/pet/${id}`)
   }
 
   return (

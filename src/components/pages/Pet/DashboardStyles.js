@@ -57,19 +57,29 @@ export const Actions = styled.div`
   a,
   button {
     text-decoration: none;
-    color: #16479d;
-    border: 2px solid #16479d;
+    color: var(--black);
+    border: 2px solid var(--black);
+    background-color: transparent;
     border-radius: 5px;
     padding: 7px 12px;
-    background-color: #fff;
     margin-left: 1em;
     cursor: pointer;
     transition: 0.3s;
     font-size: 12px;
+    font-weight: bold;
+    box-shadow: var(--shadow-1);
 
     :hover {
-      background-color: #16479d;
+      background-color: var(--black);
       color: #fff;
+    }
+  }
+
+  .delete_btn {
+    :hover {
+      color: var(--white);
+      background-color: var(--fire-opal);
+      border-color: var(--fire-opal);
     }
   }
 
@@ -80,6 +90,7 @@ export const Actions = styled.div`
     :hover {
       color: #fff;
       background-color: var(--success-green);
+      border-color: var(--success-green);
     }
   }
 `;
