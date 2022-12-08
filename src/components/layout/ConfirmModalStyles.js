@@ -20,7 +20,8 @@ export const Container = styled.div`
   top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background: var(--white);
+  background: var(--fire-opal);
+  color: var(--white);
   padding: 2rem;
   border-radius: 5px;
 
@@ -34,5 +35,19 @@ export const Container = styled.div`
   button {
     color: var(--black);
     border: 2px solid var(--black);
+    width: 100px;
+    height: 30px;
+    border-radius: 5px;
+
+    background: var(--black);
+    color: var(--white);
+
+    :hover {
+      cursor: pointer;
+      background: var(--white);
+      color: var(--black);
+      font-weight: bold;
+      transition: ease-in-out 0.3s;
+    }
   }
 `;
